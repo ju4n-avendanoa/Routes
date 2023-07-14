@@ -1,14 +1,14 @@
-import { Route, Routes } from "react-router-dom";
-import "./styles/App.css";
 import NotFound from "./pages/NotFound";
 import NavBar from "./components/NavBar";
 import UserPage from "./pages/UserPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
+import ProtectedRoute from "./components/ProtectedRoute";
+import { Route, Routes } from "react-router-dom";
 import { Admin, Analytics, Dashboard, Home, LandingPage } from "./pages/index";
 import { useState } from "react";
-import ProtectedRoute from "./components/ProtectedRoute";
 import { useAuth0 } from "@auth0/auth0-react";
+import "./styles/App.css";
 
 function App() {
   const [user, setUser] = useState(null);

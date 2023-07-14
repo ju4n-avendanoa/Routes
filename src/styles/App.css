@@ -1,9 +1,13 @@
 header {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   background-color: cadetblue;
   padding: 30px;
+}
+
+header h1 {
+  text-align: center;
 }
 
 nav ul {

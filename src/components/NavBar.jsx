@@ -25,7 +25,7 @@ export default function NavBar() {
           <li>
             <NavLink
               className={({ isActive }) => (isActive ? "active" : "")}
-              to={"/users"}
+              to={"/user"}
             >
               Users
             </NavLink>

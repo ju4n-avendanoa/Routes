@@ -1,43 +1,36 @@
-import NotFound from "./pages/NotFound";
-import NavBar from "./components/NavBar";
-import UserPage from "./pages/UserPage";
+import Header from "./components/Header";
 import LoginPage from "./pages/LoginPage";
-import RegisterPage from "./pages/RegisterPage";
-import ProtectedRoute from "./components/ProtectedRoute";
-import { Route, Routes } from "react-router-dom";
-import { Admin, Analytics, Dashboard, Home, LandingPage } from "./pages/index";
-import { useState } from "react";
-import "./styles/App.css";
-import LoginButton from "./components/LoginButton";
+import NotFound from "./pages/NotFound";
 import Profile from "./components/Profile";
-import LogoutButton from "./components/LogoutButton";
+import ProtectedRoute from "./components/ProtectedRoute";
+import RegisterPage from "./pages/RegisterPage";
+import UserPage from "./pages/UserPage";
+import { Admin, Analytics, Dashboard, Home, LandingPage } from "./pages/index";
+import { useAuth0 } from "@auth0/auth0-react";
+import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import "./styles/App.css";
 
 function App() {
-  const [user, setUser] = useState(null);
+  const { isAuthenticated } = useAuth0();
 
   return (
     <>
-      <header>
-        <NavBar />
-        <LoginButton />
-        <LogoutButton />
-      </header>
-
+      <div>
+        <Header />
+      </div>
       <main>
         <Profile />
         <Routes>
           <Route index element={<LandingPage />} />
-          <Route element={<ProtectedRoute isAllowed={!!user} />}>
+          <Route element={<ProtectedRoute isAllowed={isAuthenticated} />}>
             <Route path="/home" element={<Home />} />
             <Route path="/dashboard" element={<Dashboard />} />
           </Route>
           <Route
             path="/analytics"
             element={
-              <ProtectedRoute
-                isAllowed={!!user && user.permissions.includes("analize")}
-                redirectTo="/home"
-              >
+              <ProtectedRoute isAllowed={isAuthenticated} redirectTo="/home">
                 <Analytics />
               </ProtectedRoute>
             }

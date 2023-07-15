@@ -1,0 +1,61 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: cadetblue;
+  padding: 10px 20px 10px 20px;
+  height: 8vh;
+}
+
+h1 {
+  font-size: 2vw;
+  width: auto;
+  height: auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  width: auto;
+  height: 8vh;
+  gap: 5px;
+}
+
+.logo svg {
+  height: auto;
+  width: 3vw;
+  height: auto;
+  cursor: pointer;
+}
+
+ul {
+  display: flex;
+  gap: 3vw;
+  padding: 0;
+  height: auto;
+  width: auto;
+}
+
+li {
+  list-style: none;
+  font-size: 1.5vw;
+}
+
+.user-icon {
+  width: 10vw;
+  text-align: center;
+}
+
+.user-icon svg {
+  height: auto;
+  width: 2vw;
+}
+
+.active {
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}

@@ -4,7 +4,6 @@ import "../styles/App.css";
 export default function NavBar() {
   return (
     <div>
-      <h1>Pagina principal</h1>
       <nav>
         <ul>
           <li>

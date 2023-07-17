@@ -49,6 +49,7 @@ li {
 .user-icon svg {
   height: auto;
   width: 2vw;
+  cursor: pointer;
 }
 
 .active {
